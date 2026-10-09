@@ -1,0 +1,67 @@
+---
+/** Original portfolio identity; abstract geometry, never project gameplay media. */
+interface Props { variant?: 'world' | 'rts' | 'archive'; id: string; }
+const { variant = 'world', id } = Astro.props;
+const archive = variant === 'archive';
+const tiles = archive ? [
+  [272,302,14],[380,355,22],[488,302,14],[380,247,20],
+] : [
+  [164,300,12],[272,247,22],[380,194,15],
+  [272,353,24],[380,300,46],[488,247,25],
+  [380,406,17],[488,353,22],[596,300,13],
+];
+const top = (x:number,y:number,z:number) => `${x},${y-z-24} ${x+49},${y-z} ${x},${y-z+24} ${x-49},${y-z}`;
+const left = (x:number,y:number,z:number) => `${x-49},${y-z} ${x},${y-z+24} ${x},${y+24} ${x-49},${y}`;
+const right = (x:number,y:number,z:number) => `${x},${y-z+24} ${x+49},${y-z} ${x+49},${y} ${x},${y+24}`;
+---
+<svg class:list={['concept-art', `concept-art--${variant}`]} viewBox="0 0 760 570" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id={`${id}-face`} x1="240" y1="150" x2="540" y2="410" gradientUnits="userSpaceOnUse"><stop stop-color="#fffef3"/><stop offset=".5" stop-color={archive ? '#f4e7dc' : '#dbedf0'}/><stop offset="1" stop-color={archive ? '#c8dadd' : '#a9d3df'}/></linearGradient>
+    <linearGradient id={`${id}-shard`} x1="380" y1="120" x2="455" y2="310" gradientUnits="userSpaceOnUse"><stop stop-color="#fbfff7"/><stop offset=".5" stop-color="#bfdee5"/><stop offset="1" stop-color="#699eae"/></linearGradient>
+    <radialGradient id={`${id}-air`}><stop stop-color={archive ? '#f7e1c9' : '#d6eef1'} stop-opacity=".8"/><stop offset="1" stop-color="#f6fbf7" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="390" cy="302" rx="320" ry="236" fill={`url(#${id}-air)`}/>
+  <g class="art-survey" stroke="#9bbfc8" stroke-width=".8" opacity=".42">
+    <path d="M57 351 381 190 704 351 380 511Z"/>
+    <path d="M109 378 434 217M163 405 489 244M217 432 543 271M271 459 597 298M325 486 649 325M110 325 434 486M164 298 489 459M218 271 543 432M272 244 597 405M326 217 649 378"/>
+    <path d="M380 173V115M41 351H12M720 351H747M380 530V551"/>
+  </g>
+  <path d="M144 322 380 205 617 322 380 439Z" fill="#7aa8b7" opacity=".065"/>
+  <g class="art-platforms">
+    {tiles.map(([x,y,z],index) => <g class:list={['art-tile', { 'art-tile--accent': index === (archive ? 1 : 3) }]}>
+      <polygon points={left(x!,y!,z!)} fill={archive ? '#c2cdca' : '#8fb8c6'} fill-opacity=".75"/>
+      <polygon points={right(x!,y!,z!)} fill={archive ? '#dce3db' : '#bfdde3'}/>
+      <polygon points={top(x!,y!,z!)} fill={`url(#${id}-face)`} stroke="#fafff8" stroke-width="1.3"/>
+      <path d={`M${x!-34} ${y!-z!}L${x!} ${y!-z!+16} ${x!+34} ${y!-z!}`} stroke="#719baa" stroke-opacity=".4" stroke-width=".75"/>
+      {index === (archive ? 1 : 3) && <path d={`M${x!-10} ${y!-z!}l10 -5 10 5-10 5Z`} fill="#e2af87"/>}
+    </g>)}
+  </g>
+  <g class="art-heart">
+    {archive ? <>
+      <path d="M330 150 354 143 391 230 379 278Z" fill={`url(#${id}-shard)`}/>
+      <path d="M330 150 379 278 366 205Z" fill="#fcf9ed"/>
+      <path d="M430 150 406 143 369 230 381 278Z" fill="#a6c9d1"/>
+      <path d="M430 150 381 278 394 205Z" fill="#e8efe7"/>
+      <path d="m380 184 23 39-23 39-23-39Z" fill="#e3c49f"/>
+      <path d="m380 184 23 39-23 9-23-9Z" fill="#fff5db"/>
+      <path d="M380 262 398 279 380 318 362 279Z" fill="#a0bfca"/>
+      <path d="M380 262V318L362 279Z" fill="#edf4eb"/>
+      <path d="M330 150 366 205M430 150 394 205" stroke="#fffdf2" stroke-width="1.2"/>
+    </> : <>
+    <path d="M380 111 414 220 380 281 347 220Z" fill={`url(#${id}-shard)`}/>
+    <path d="M380 111V237L347 220Z" fill="#f8fff8" fill-opacity=".8"/>
+    <path d="M380 111 414 220 380 237Z" fill="#abcfd9" fill-opacity=".45"/>
+    <path d="m347 220 33 17v44Z" fill="#82b0bf"/>
+    <path d="m414 220-34 17v44Z" fill="#cbe5e8"/>
+    <path d="M380 124V215" stroke="#fffef5" stroke-width="1.5"/>
+    <path d="m380 203 10 17-10 17-10-17Z" fill="#fff6da"/>
+    </>}
+  </g>
+  <g stroke={archive ? '#c9a782' : '#79a4b3'} stroke-width="1" opacity=".75">
+    <path d={archive ? 'M237 249 306 215 306 174 352 151M409 321 464 349 522 321 522 265' : 'M147 275 147 207 242 159M513 388 585 424 655 389'}/>
+    <circle cx={archive ? '237' : '147'} cy={archive ? '249' : '275'} r="4" fill="#fffaf0"/>
+    <circle cx={archive ? '522' : '655'} cy={archive ? '265' : '389'} r="4" fill="#fffaf0"/>
+    <path d="m456 158 5-10 5 10-5 10Zm-255 193 4-7 4 7-4 7Z" fill="#fdfdf3"/>
+  </g>
+  <g stroke="#739aa7" stroke-width=".8" opacity=".6"><path d="M247 137h-18v18M542 199h18v-18M224 449v18h18M538 465h18v-18"/></g>
+</svg>

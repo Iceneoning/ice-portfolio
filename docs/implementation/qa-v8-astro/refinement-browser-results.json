@@ -1,0 +1,72 @@
+{
+  "pages": [
+    {
+      "name": "home-1440",
+      "brokenImages": 0,
+      "next": [],
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "ICE · 让规则凝成世界",
+      "width": 1440
+    },
+    {
+      "name": "rts-1440",
+      "brokenImages": 0,
+      "next": [
+        "/projects/blitz-archive/",
+        "/projects/blitz-archive/"
+      ],
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "RTS Gameplay Systems · ICE Portfolio",
+      "width": 1440
+    },
+    {
+      "name": "blitz-1440",
+      "brokenImages": 0,
+      "next": [
+        "/projects/rts-gameplay-systems/",
+        "/projects/rts-gameplay-systems/"
+      ],
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "Blitz Archive · ICE Portfolio",
+      "width": 1440
+    },
+    {
+      "name": "home-390",
+      "brokenImages": 0,
+      "next": [],
+      "scripts": 0,
+      "scrollWidth": 375,
+      "title": "ICE · 让规则凝成世界",
+      "width": 390
+    },
+    {
+      "name": "rts-390",
+      "brokenImages": 0,
+      "next": [
+        "/projects/blitz-archive/",
+        "/projects/blitz-archive/"
+      ],
+      "scripts": 0,
+      "scrollWidth": 375,
+      "title": "RTS Gameplay Systems · ICE Portfolio",
+      "width": 390
+    },
+    {
+      "name": "blitz-390",
+      "brokenImages": 0,
+      "next": [
+        "/projects/rts-gameplay-systems/",
+        "/projects/rts-gameplay-systems/"
+      ],
+      "scripts": 0,
+      "scrollWidth": 375,
+      "title": "Blitz Archive · ICE Portfolio",
+      "width": 390
+    }
+  ],
+  "keyboard": "Card Tab focus-visible and Enter navigation checked",
+  "motion": "Static CSS reduction rules retained; browser emulation not run"
+}

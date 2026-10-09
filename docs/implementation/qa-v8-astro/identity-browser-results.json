@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-09",
+  "results": [
+    {
+      "duplicateIds": [],
+      "heroLinks": [
+        {
+          "bottom": 824,
+          "name": "01 Systems EngineeringRTS Gameplay Systems地图、建筑、能力与资源 ↗"
+        },
+        {
+          "bottom": 824,
+          "name": "02 Gameplay ExperimentBlitz ArchiveLyra 规则与能力扩展 ↗"
+        }
+      ],
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "test": "1440 home",
+      "width": 1440
+    },
+    {
+      "artBelowText": true,
+      "scripts": 0,
+      "scrollWidth": 375,
+      "test": "390 home",
+      "width": 390
+    },
+    {
+      "nextTop": 151.6979217529297,
+      "scrollWidth": 375,
+      "test": "390 Blitz keyboard entry",
+      "title": "BlitzArchive.",
+      "width": 390
+    },
+    {
+      "test": "browser back from Blitz",
+      "url": "http://127.0.0.1:4323/",
+      "pass": true
+    },
+    {
+      "scrollWidth": 375,
+      "test": "390 RTS folio entry",
+      "title": "RTS GameplaySystems.",
+      "width": 390
+    },
+    {
+      "test": "RTS top next",
+      "url": "http://127.0.0.1:4323/projects/blitz-archive/"
+    },
+    {
+      "test": "Blitz footer next",
+      "url": "http://127.0.0.1:4323/projects/rts-gameplay-systems/"
+    },
+    {
+      "test": "RTS footer next",
+      "url": "http://127.0.0.1:4323/projects/blitz-archive/"
+    },
+    {
+      "test": "case return selection",
+      "url": "http://127.0.0.1:4323/#screenings"
+    },
+    {
+      "projects": [
+        {
+          "height": 617.2604370117188,
+          "width": 334.66668701171875
+        },
+        {
+          "height": 579.5104370117188,
+          "width": 334.66668701171875
+        }
+      ],
+      "scrollWidth": 375,
+      "test": "390 selected folios",
+      "width": 390
+    },
+    {
+      "artBelowText": true,
+      "navBelowArt": true,
+      "scrollWidth": 805,
+      "test": "820 natural flow after fix",
+      "width": 820
+    },
+    {
+      "duplicateIds": [],
+      "scrollWidth": 1425,
+      "test": "1440 Blitz deep link",
+      "title": "BlitzArchive.",
+      "width": 1440
+    },
+    {
+      "scrollWidth": 1425,
+      "test": "1440 RTS and Blitz top next",
+      "title": "RTS GameplaySystems.",
+      "width": 1440
+    }
+  ],
+  "keyboardFocus": "Blitz link, 2px visible outline",
+  "notRun": [
+    "OS prefers-reduced-motion emulation",
+    "Browser JavaScript-disabled setting",
+    "Physical mobile devices / screen reader / multiple browsers"
+  ]
+}

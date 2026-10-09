@@ -1,0 +1,85 @@
+{
+  "desktop": {
+    "canvasWidth": 725,
+    "frames": "22",
+    "scrollWidth": 1425,
+    "state": "ready",
+    "viewport": 1440
+  },
+  "paused1": {
+    "frames": "24",
+    "pressed": "true",
+    "state": "paused"
+  },
+  "paused2": {
+    "frames": "24",
+    "state": "paused"
+  },
+  "resumed": {
+    "frames": "25",
+    "state": "ready"
+  },
+  "offscreen1": {
+    "bottom": 817.9375,
+    "frames": "26",
+    "top": 237.9375
+  },
+  "offscreen2": {
+    "bottom": -31.3958740234375,
+    "frames": "29",
+    "top": -611.3958740234375
+  },
+  "offscreen3": {
+    "bottom": -31.3958740234375,
+    "frames": "29"
+  },
+  "rts": {
+    "canvas": 0,
+    "next": [
+      "http://127.0.0.1:4323/projects/blitz-archive/",
+      "http://127.0.0.1:4323/projects/rts-gameplay-systems/#next-project",
+      "http://127.0.0.1:4323/projects/blitz-archive/"
+    ],
+    "overflow": false,
+    "scripts": 0,
+    "title": "RTS Gameplay Systems · ICE Portfolio"
+  },
+  "blitz": {
+    "canvas": 0,
+    "overflow": false,
+    "scripts": 0,
+    "title": "Blitz Archive · ICE Portfolio"
+  },
+  "backTitle": "RTS Gameplay Systems · ICE Portfolio",
+  "mobile": {
+    "canvasWidth": 420,
+    "scrollWidth": 375,
+    "state": "ready",
+    "viewport": 390
+  },
+  "mobileControl": {
+    "buttonHeight": 38,
+    "buttonInViewport": true,
+    "focused": "继续光影",
+    "state": "paused"
+  },
+  "mobileBlitz": {
+    "canvas": 0,
+    "scrollWidth": 375,
+    "viewport": 390
+  },
+  "mobileRts": {
+    "scrollWidth": 375,
+    "title": "RTS Gameplay Systems · ICE Portfolio",
+    "viewport": 390
+  },
+  "mobileBottomNextTitle": "Blitz Archive · ICE Portfolio",
+  "returnUrl": "http://127.0.0.1:4323/#screenings",
+  "finalLogs": [
+    {
+      "level": "error",
+      "message": "Uncaught (in promise) TypeError: Cannot use 'in' operator to search for 'animation' in undefined",
+      "timestamp": "2026-10-09T02:21:22.250Z"
+    }
+  ]
+}

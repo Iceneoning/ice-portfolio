@@ -1,0 +1,9 @@
+---
+import { projectHref, type Project } from '../lib/projects';
+interface Props { project: Project; end?: boolean; }
+const { project, end = false } = Astro.props;
+---
+<a class={end ? 'next-feature' : 'case-next'} href={projectHref(project)} aria-label={`下一部作品：${project.data.title}`}>
+  <span><small>下一部作品 →</small><strong>{project.data.title}</strong></span>
+  {!end && <span class="next-arrow" aria-hidden="true">↗</span>}
+</a>

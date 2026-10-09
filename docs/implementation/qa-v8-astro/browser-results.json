@@ -1,0 +1,184 @@
+{
+  "browser": "Codex In-app Browser (Chromium)",
+  "pages": [
+    {
+      "name": "home-390",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [],
+      "scripts": 0,
+      "scrollWidth": 375,
+      "title": "ICE · 让规则凝成世界",
+      "width": 390
+    },
+    {
+      "name": "rts-390",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [
+        "/projects/blitz-archive/",
+        "/projects/blitz-archive/"
+      ],
+      "nextTop": 241.6666717529297,
+      "scripts": 0,
+      "scrollWidth": 375,
+      "title": "RTS Gameplay Systems · ICE Portfolio",
+      "width": 390
+    },
+    {
+      "name": "blitz-390",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [
+        "/projects/rts-gameplay-systems/",
+        "/projects/rts-gameplay-systems/"
+      ],
+      "nextTop": 241.6666717529297,
+      "scripts": 0,
+      "scrollWidth": 375,
+      "title": "Blitz Archive · ICE Portfolio",
+      "width": 390
+    },
+    {
+      "name": "home-1440",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [],
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "ICE · 让规则凝成世界",
+      "width": 1440
+    },
+    {
+      "name": "blitz-1440",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [
+        "/projects/rts-gameplay-systems/",
+        "/projects/rts-gameplay-systems/"
+      ],
+      "nextTop": 237.33334350585935,
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "Blitz Archive · ICE Portfolio",
+      "width": 1440
+    },
+    {
+      "name": "rts-1440",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [
+        "/projects/blitz-archive/",
+        "/projects/blitz-archive/"
+      ],
+      "nextTop": 237.33334350585935,
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "RTS Gameplay Systems · ICE Portfolio",
+      "width": 1440
+    },
+    {
+      "name": "blitz-deeplink-refresh",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [
+        "/projects/rts-gameplay-systems/",
+        "/projects/rts-gameplay-systems/"
+      ],
+      "nextTop": 237.33334350585935,
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "Blitz Archive · ICE Portfolio",
+      "width": 1440
+    },
+    {
+      "name": "rts-deeplink-refresh",
+      "brokenImages": [],
+      "h1": 1,
+      "next": [
+        "/projects/blitz-archive/",
+        "/projects/blitz-archive/"
+      ],
+      "nextTop": 237.33334350585935,
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "title": "RTS Gameplay Systems · ICE Portfolio",
+      "width": 1440
+    }
+  ],
+  "keyboard": [
+    {
+      "focusVisible": true,
+      "href": "#main",
+      "outline": "solid",
+      "text": "跳到主要内容"
+    },
+    {
+      "focusVisible": true,
+      "href": "/",
+      "outline": "solid",
+      "text": "✳ICEPORTFOLIO"
+    },
+    {
+      "focusVisible": true,
+      "href": "#screenings",
+      "outline": "solid",
+      "text": "作品选集"
+    },
+    {
+      "focusVisible": true,
+      "href": "#about",
+      "outline": "solid",
+      "text": "关于"
+    },
+    {
+      "focusVisible": true,
+      "href": "#screenings",
+      "outline": "solid",
+      "text": "进入作品展厅 ↗"
+    },
+    {
+      "focusVisible": true,
+      "href": "/projects/rts-gameplay-systems/",
+      "outline": "solid",
+      "text": "阅读技术案例 ↗"
+    },
+    {
+      "focusVisible": true,
+      "href": "#screenings",
+      "outline": "solid",
+      "text": "SELECTED WORKS ↓"
+    },
+    {
+      "focusVisible": true,
+      "href": "/projects/rts-gameplay-systems/",
+      "outline": "solid",
+      "text": " 01 / SYSTEMS ENGINEERINGUNREAL ENGINE 5.8   RTS.Gameplay SystemsMAP / BUILDING / ABILITY / RESOURCE  RTS Gameplay Systems地图、建筑、能力与资源 · 实机画面待补查看案例 ↗ "
+    },
+    {
+      "focusVisible": true,
+      "href": "/projects/blitz-archive/",
+      "outline": "solid",
+      "text": " 02 / GAMEPLAY EXPERIMENTUNREAL ENGINE 5.7 / LYRA   BA.Blitz ArchiveLYRA / GAS / GAMEPLAY RULES  Blitz ArchiveLyra 规则与能力扩展 · 实机画面待补查看案例 ↗ "
+    },
+    {
+      "focusVisible": true,
+      "href": "/projects/rts-gameplay-systems/",
+      "outline": "solid",
+      "text": "从第一部作品开始 →"
+    },
+    {
+      "focusVisible": true,
+      "href": "#screenings",
+      "outline": "solid",
+      "text": "BACK TO WORKS ↑"
+    }
+  ],
+  "notes": [
+    "Both cases: top and bottom next-work links clicked.",
+    "Back and forward navigation checked.",
+    "Deep links and reload checked for both cases.",
+    "Zero scripts in all static pages. Browser script-blocking switch not available.",
+    "Reduced-motion CSS checked statically; browser emulation unavailable."
+  ]
+}

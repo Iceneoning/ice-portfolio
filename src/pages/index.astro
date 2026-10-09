@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectPoster from '../components/ProjectPoster.astro';
+import { getPublishedProjects, projectHref, projectNumber } from '../lib/projects';
+const projects = await getPublishedProjects();
+const firstProject = projects[0];
+const lastProject = projects[projects.length - 1];
+---
+<BaseLayout title="ICE · 让规则凝成世界" description="ICE：Unreal Engine Gameplay 与 C++ 游戏开发作品集。" home>
+  <main id="main" tabindex="-1">
+    <Hero projects={projects} />
+    <section class="gallery" id="screenings" aria-labelledby="screenings-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">SELECTED WORKS{firstProject && lastProject && ` / ${projectNumber(firstProject)}—${projectNumber(lastProject)}`}</p><h2 id="screenings-title">作品选集<span class="accent">。</span></h2></div>
+          <p>从玩法出发，让系统成立。<br />两部作品，记录设计、实现与取舍。</p>
+        </div>
+        <div class="project-grid">{projects.map((project) => <ProjectPoster project={project} />)}</div>
+        <div class="gallery-foot"><span>每个项目都有独立的案例页，可以直接切换下一部。</span>{firstProject && <a href={projectHref(firstProject)}>从第一部作品开始 →</a>}</div>
+      </div>
+    </section>
+    <section class="about wrap" id="about" aria-label="关于这个作品集"><div><p class="eyebrow">ABOUT / MY APPROACH</p><h2>关心玩法，<br />也关心系统如何成立。</h2></div><div><p>这里记录我参与的游戏项目与实现过程。比起罗列技术名词，我更希望把具体负责的系统、设计选择和实际验证讲清楚。</p><p class="about-note">真实 UE 项目画面与工程证据正在整理。暂未提供的材料会明确标识，装饰图形不代表游戏实机效果。</p></div></section>
+  </main>
+</BaseLayout>

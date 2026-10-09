@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Sixfold snow crystal</title>
+<desc id="desc">A symmetric hexagonal snowflake with fine natural dendritic ice branches and translucent facets.</desc>
+<defs>
+<linearGradient id="edge" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#edffff" stop-opacity=".9"/><stop offset=".48" stop-color="#a4edef" stop-opacity=".75"/><stop offset="1" stop-color="#b4bff3" stop-opacity=".54"/></linearGradient>
+<linearGradient id="arms" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9ffff" stop-opacity=".72"/><stop offset="1" stop-color="#afddd9" stop-opacity=".38"/></linearGradient>
+<linearGradient id="facet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ebffff" stop-opacity=".46"/><stop offset=".6" stop-color="#9de6ea" stop-opacity=".12"/><stop offset="1" stop-color="#c5c3ff" stop-opacity=".22"/></linearGradient>
+<linearGradient id="facet2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efffff" stop-opacity=".30"/><stop offset="1" stop-color="#a1c0f5" stop-opacity=".10"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#adfff1" stop-opacity=".22"/><stop offset=".45" stop-color="#a4d8eb" stop-opacity=".09"/><stop offset="1" stop-color="#b6d7ff" stop-opacity="0"/></radialGradient>
+<filter id="soft"><feGaussianBlur stdDeviation="17"/></filter>
+</defs>
+<circle cx="450" cy="450" r="345" fill="url(#halo)" filter="url(#soft)"/>
+<g id="arm">
+<path d="M450 444 V130" stroke="url(#edge)" stroke-width="4" stroke-linecap="round"/>
+<path d="M450 409 430 380 430 343 M450 409 470 380 470 343
+M450 369 412 331 412 294 M450 369 488 331 488 294
+M450 321 401 280 401 244 M450 321 499 280 499 244
+M450 272 390 228 390 187 M450 272 510 228 510 187
+M450 215 411 185 409 158 M450 215 489 185 491 158" stroke="url(#arms)" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M450 348 430 316 430 282 450 250 470 282 470 316Z" fill="url(#facet)" stroke="#dafbf8" stroke-opacity=".62" stroke-width="1.8"/>
+<path d="M450 264 409 229 450 170 491 229Z" fill="url(#facet2)" stroke="#efffff" stroke-opacity=".61" stroke-width="1.8"/>
+<path d="M450 170 437 158 450 119 463 158Z" fill="#eafcff" fill-opacity=".25" stroke="#ecffff" stroke-opacity=".75" stroke-width="1.7"/>
+<path d="M450 350V130 M450 250 430 282 M450 250 470 282 M450 170 409 229 M450 170 491 229" stroke="#f9ffff" stroke-opacity=".48" stroke-width="1.15"/>
+<path d="M406 244 450 272 494 244 M415 298 450 321 485 298" stroke="#b6fff5" stroke-opacity=".45" stroke-width="1.3"/>
+<circle cx="450" cy="148" r="3.2" fill="#ecffff" opacity=".55"/>
+</g>
+<g transform="rotate(60 450 450)"><use href="#arm"/></g>
+<g transform="rotate(120 450 450)"><use href="#arm"/></g>
+<g transform="rotate(180 450 450)"><use href="#arm"/></g>
+<g transform="rotate(240 450 450)"><use href="#arm"/></g>
+<g transform="rotate(300 450 450)"><use href="#arm"/></g>
+<path d="M450 338 547 394 547 506 450 562 353 506 353 394Z" fill="url(#facet)" stroke="#ddfbf8" stroke-opacity=".7" stroke-width="2.4"/>
+<path d="M450 363 524 406 524 493 450 537 376 493 376 406Z" stroke="#ecffff" stroke-opacity=".5" stroke-width="1.5"/>
+<path d="M450 338V562M353 394 547 506M547 394 353 506" stroke="#ddfbfb" stroke-opacity=".25" stroke-width="1.4"/>
+<path d="M450 405 489 428V473L450 495 411 473V428Z" fill="#d9f9f6" fill-opacity=".13" stroke="#d9ffff" stroke-opacity=".7" stroke-width="2.4"/>
+<path d="M450 405 450 495M411 428 489 473M489 428 411 473" stroke="#f8ffff" stroke-opacity=".40" stroke-width="1"/>
+<circle cx="450" cy="450" r="10" fill="#e4ffff" fill-opacity=".24" stroke="#f1ffff" stroke-opacity=".72"/>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "name": "ice-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.1",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "verify:build": "node scripts/verify-build.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^6.0.1",
+    "@tailwindcss/vite": "^4.0.0",
+    "astro": "^6.4.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "typescript": "^5.0.0"
+  }
+}

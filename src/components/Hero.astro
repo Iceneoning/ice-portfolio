@@ -1,0 +1,30 @@
+---
+import { projectHref, projectNumber, type Project } from '../lib/projects';
+import { Image } from 'astro:assets';
+import workshop from '../assets/atelier/winter-workshop.png';
+interface Props { projects: Project[]; }
+const { projects } = Astro.props;
+const firstProjectHref = projects[0] && projectHref(projects[0]);
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-scene" aria-hidden="true"><Image src={workshop} alt="" class="atelier-image" widths={[640, 1024, 1672]} sizes="100vw" format="webp" quality={85} loading="eager" fetchpriority="high" /><div class="hero-veil"></div></div>
+  <div class="hero-grid wrap">
+    <div class="hero-copy">
+      <p class="hero-brow"><span class="status-dot" aria-hidden="true"></span> GAMEPLAY ENGINEER & WORLD BUILDER</p>
+      <p class="hero-kicker">游戏开发 · 系统设计</p>
+      <h1 id="hero-title"><span>让规则</span><span>凝成<em>世界。</em></span></h1>
+      <p class="hero-translation">From systems to playable worlds.</p>
+      <p class="hero-description">以 C++ 为骨架，让玩法拥有自己的生命。<br />专注 Unreal Engine 客户端与 Gameplay Systems。</p>
+      <div class="hero-actions"><a class="main-link" href="#screenings">进入作品展厅 <span aria-hidden="true">↗</span></a>{firstProjectHref && <a class="sub-link" href={firstProjectHref}>阅读技术案例 <span aria-hidden="true">↗</span></a>}</div>
+    </div>
+    <span class="scene-caption">冬日世界工坊 <small>AI 概念插画 · 非 UE 实机</small></span>
+  </div>
+    <nav class="hero-projects wrap" aria-label="精选项目快捷入口">
+      <div class="hero-projects-head"><span>从这里，进入作品。</span><span>SELECTED WORKS / {String(projects.length).padStart(2, '0')}</span></div>
+      {projects.map((project) => <a class="hero-project" href={projectHref(project)} aria-label={`进入 ${project.data.title} 案例`}>
+        <span class="hero-project-number">{projectNumber(project)}</span>
+        <div><span class="hero-project-genre">{project.data.genre}</span><strong>{project.data.title}</strong><p>{project.data.cardCaption}</p></div>
+        <span class="hero-project-arrow" aria-hidden="true">↗</span>
+      </a>)}
+    </nav>
+</section>

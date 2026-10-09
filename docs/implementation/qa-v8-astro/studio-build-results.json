@@ -1,0 +1,716 @@
+{
+  "checks": [
+    {
+      "name": "/404.html: single H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: zero client scripts",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "/404.html: no decorative canvas",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: no prototype or old visual dependencies",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: light theme",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /_astro/BaseLayout.DbwNLmrC.css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: anchor #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /#about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: anchor /#about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: HTTP",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "name": "/: single H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: zero client scripts",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "/: no decorative canvas",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage: project-first navigation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: no prototype or old visual dependencies",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: light theme",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /_astro/BaseLayout.DbwNLmrC.css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: anchor #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: anchor #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference #about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: anchor #about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: anchor #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /projects/rts-gameplay-systems/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /projects/rts-gameplay-systems/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /projects/blitz-archive/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: anchor #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /projects/rts-gameplay-systems/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /projects/blitz-archive/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /projects/rts-gameplay-systems/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: reference #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: anchor #screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: HTTP",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "name": "/projects/blitz-archive/: single H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: zero client scripts",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "/projects/blitz-archive/: no decorative canvas",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: no prototype or old visual dependencies",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: light theme",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /_astro/BaseLayout.DbwNLmrC.css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /#about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor /#about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /projects/rts-gameplay-systems/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #玩法目标",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #玩法目标",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #个人职责",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #个人职责",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #系统设计",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #系统设计",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #真实验证与待验证",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #真实验证与待验证",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #ownership",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #ownership",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #evidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #evidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference #next-project",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor #next-project",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /projects/rts-gameplay-systems/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/blitz-archive/: HTTP",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: single H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: zero client scripts",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: no decorative canvas",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: no prototype or old visual dependencies",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: light theme",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /_astro/BaseLayout.DbwNLmrC.css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /visuals/ice-mark.svg",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /#about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor /#about",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /projects/blitz-archive/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #玩法目标",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #玩法目标",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #个人职责",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #个人职责",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #系统设计",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #系统设计",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #真实验证与待验证",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #真实验证与待验证",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #ownership",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #ownership",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #evidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #evidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference #next-project",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor #next-project",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /projects/blitz-archive/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: reference /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: anchor /#screenings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/projects/rts-gameplay-systems/: HTTP",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "name": "RTS: two named next-work entries",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "RTS: next-work target",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Blitz: two named next-work entries",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Blitz: next-work target",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "RTS: accurate ownership and testing limits",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Blitz: existing framework separated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS: reduced-motion fallback present (static inspection)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS: no old shader/prototype dependency",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "SVG: published small winter identity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP: missing route is 404",
+      "pass": true,
+      "detail": "404"
+    },
+    {
+      "name": "HTTP: /_astro/BaseLayout.DbwNLmrC.css",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP: winter identity asset",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "total": 142,
+  "passed": 142
+}

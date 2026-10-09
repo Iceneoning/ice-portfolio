@@ -1,0 +1,23 @@
+---
+import { projectHref, projectNumber, type Project } from '../lib/projects';
+import PortfolioArtwork from './PortfolioArtwork.astro';
+interface Props { project: Project; }
+const { project } = Astro.props;
+const { data } = project;
+---
+<a class:list={['project', { 'project--ba': data.tone === 'warm' }]} href={projectHref(project)} aria-label={`查看 ${data.title} 技术案例`}>
+  <div class="project-visual">
+    {data.mediaApproved && data.cover ? <img class="project-cover" src={data.cover} alt={data.coverAlt} loading="lazy" width="1280" height="720" /> : <>
+      <PortfolioArtwork warm={data.tone === 'warm'} />
+      <span class="project-visual-label">AI 概念插画 · 非 UE 项目画面</span>
+    </>}
+  </div>
+  <div class="project-info">
+    <p class="project-genre"><span>{data.genre}</span><span class="project-number" aria-hidden="true">{projectNumber(project)}</span></p>
+    <div class="project-title"><h3>{data.title}</h3></div>
+    <p class="project-caption">{data.subtitle}</p>
+    <p class="project-scope">{data.cardCaption}</p>
+    <ul class="project-tags" aria-label="项目关键词">{data.keywords.map((keyword) => <li>{keyword}</li>)}</ul>
+    <div class="project-bottom"><span>阅读项目案例 <span class="arrow" aria-hidden="true">↗</span></span><span>{!data.mediaApproved && '实机画面待补'}</span></div>
+  </div>
+</a>

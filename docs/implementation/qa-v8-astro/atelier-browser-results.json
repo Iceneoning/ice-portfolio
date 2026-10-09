@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-09",
+  "results": [
+    {
+      "heroLinkBottoms": [
+        832.0416717529297,
+        832.0416717529297
+      ],
+      "loadedImages": true,
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "test": "1440 home",
+      "width": 1440
+    },
+    {
+      "loadedImages": true,
+      "scripts": 0,
+      "scrollWidth": 375,
+      "test": "390 home",
+      "width": 390
+    },
+    {
+      "label": "进入 Blitz Archive 案例",
+      "outline": "rgb(48, 92, 156) solid 2px",
+      "test": "keyboard focus"
+    },
+    {
+      "loadedImages": true,
+      "nextBottom": 212.6979217529297,
+      "scrollWidth": 375,
+      "test": "390 Blitz keyboard entry",
+      "title": "BlitzArchive.",
+      "width": 390
+    },
+    {
+      "test": "browser back from Blitz",
+      "url": "http://127.0.0.1:4323/"
+    },
+    {
+      "scrollWidth": 375,
+      "test": "390 RTS project-card entry",
+      "title": "RTS GameplaySystems.",
+      "width": 390
+    },
+    {
+      "test": "RTS top next",
+      "url": "http://127.0.0.1:4323/projects/blitz-archive/"
+    },
+    {
+      "test": "Blitz footer next",
+      "url": "http://127.0.0.1:4323/projects/rts-gameplay-systems/"
+    },
+    {
+      "test": "RTS footer next",
+      "url": "http://127.0.0.1:4323/projects/blitz-archive/"
+    },
+    {
+      "test": "case return selection",
+      "url": "http://127.0.0.1:4323/#screenings"
+    },
+    {
+      "loadedImages": true,
+      "scrollWidth": 375,
+      "test": "390 project gallery",
+      "width": 390
+    },
+    {
+      "loadedImages": true,
+      "scrollWidth": 805,
+      "test": "820 home",
+      "width": 820
+    },
+    {
+      "scripts": 0,
+      "scrollWidth": 1425,
+      "test": "1440 Blitz deep link",
+      "title": "BlitzArchive.",
+      "width": 1440
+    },
+    {
+      "scrollWidth": 1425,
+      "test": "1440 RTS and Blitz top next",
+      "title": "RTS GameplaySystems.",
+      "width": 1440
+    }
+  ],
+  "notRun": [
+    "OS prefers-reduced-motion emulation",
+    "Browser JavaScript-disabled setting",
+    "Physical mobile devices / screen reader / multiple browsers"
+  ]
+}

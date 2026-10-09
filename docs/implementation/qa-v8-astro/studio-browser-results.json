@@ -1,0 +1,79 @@
+{
+  "desktop": {
+    "canvas": 0,
+    "projects": [
+      {
+        "bottom": 452.50001525878906,
+        "href": "http://127.0.0.1:4323/projects/rts-gameplay-systems/",
+        "text": " 01 Systems EngineeringRTS Gameplay Systems地图、建筑、能力与资源 ↗ "
+      },
+      {
+        "bottom": 599.3541717529297,
+        "href": "http://127.0.0.1:4323/projects/blitz-archive/",
+        "text": " 02 Gameplay ExperimentBlitz ArchiveLyra 规则与能力扩展 ↗ "
+      }
+    ],
+    "scripts": 0,
+    "scrollWidth": 1425,
+    "viewport": 1440
+  },
+  "desktopRts": {
+    "nextLinks": [
+      {
+        "href": "http://127.0.0.1:4323/projects/blitz-archive/",
+        "top": 130
+      },
+      {
+        "href": "http://127.0.0.1:4323/projects/blitz-archive/",
+        "top": 2633.125
+      }
+    ],
+    "scripts": 0,
+    "scrollWidth": 1425,
+    "title": "RTS Gameplay Systems · ICE Portfolio",
+    "viewport": 1440
+  },
+  "desktopNextTitle": "Blitz Archive · ICE Portfolio",
+  "desktopBlitz": {
+    "scrollWidth": 1425,
+    "viewport": 1440
+  },
+  "desktopBackTitle": "RTS Gameplay Systems · ICE Portfolio",
+  "mobileRts": {
+    "nextVisible": true,
+    "scrollWidth": 375,
+    "viewport": 390
+  },
+  "mobileBottomNext": "Blitz Archive · ICE Portfolio",
+  "mobileBlitz": {
+    "scrollWidth": 375,
+    "viewport": 390
+  },
+  "mobileBottomPrevious": "RTS Gameplay Systems · ICE Portfolio",
+  "deepLinkTitle": "Blitz Archive · ICE Portfolio",
+  "mobileReturnUrl": "http://127.0.0.1:4323/#screenings",
+  "mobileHome": {
+    "projects": [
+      {
+        "bottom": 740.6146240234375,
+        "href": "http://127.0.0.1:4323/projects/rts-gameplay-systems/",
+        "top": 624.4583740234375
+      },
+      {
+        "bottom": 856.7708740234375,
+        "href": "http://127.0.0.1:4323/projects/blitz-archive/",
+        "top": 740.6146240234375
+      }
+    ],
+    "scripts": 0,
+    "scrollWidth": 375,
+    "viewport": 390
+  },
+  "mobileKeyboard": {
+    "focused": "进入 Blitz Archive 案例",
+    "outline": "solid"
+  },
+  "mobileShortcutTitle": "Blitz Archive · ICE Portfolio",
+  "mobileBackTitle": "ICE · 让规则凝成世界",
+  "finalLogs": []
+}

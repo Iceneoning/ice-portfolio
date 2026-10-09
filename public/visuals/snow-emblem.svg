@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" fill="none" aria-hidden="true">
+  <title>Winter Emblem — refined sixfold frost crystal</title>
+  <desc>Original stylized ice crest: slender cut crystal branches, open negative space, a small pearl core and two quiet arcs.</desc>
+  <defs>
+    <linearGradient id="ice" x1="-80" y1="-290" x2="75" y2="-50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fafefa"/><stop offset=".34" stop-color="#c1e5ee"/><stop offset=".73" stop-color="#8ebdce"/><stop offset="1" stop-color="#d8f0ed"/>
+    </linearGradient>
+    <linearGradient id="facet" x1="0" y1="-306" x2="0" y2="-48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7facbf"/><stop offset=".46" stop-color="#a9d2df"/><stop offset="1" stop-color="#5f94ac"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="-80" y1="-280" x2="60" y2="-70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffef6"/><stop offset=".65" stop-color="#f2fbfc"/><stop offset="1" stop-color="#cee7ee"/>
+    </linearGradient>
+    <linearGradient id="pearl" x1="375" y1="373" x2="430" y2="436" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffdf0"/><stop offset=".5" stop-color="#e8f7f4"/><stop offset="1" stop-color="#8ab9ca"/>
+    </linearGradient>
+    <g id="branch">
+      <g transform="scale(.76 1)">
+      <g stroke="#87b3c5" stroke-width=".85" opacity=".6" stroke-linecap="round">
+        <path d="M-3-159 -36-195 M3-159 36-195 M-3-174 -25-202 M3-174 25-202"/>
+      </g>
+      <!-- A tapered central blade with a softly colored second face. -->
+      <path d="M0-48 -9-91 -5-235 0-306 5-235 9-91Z" fill="url(#ice)" stroke="#c5e4ec" stroke-width=".8"/>
+      <path d="M0-306 5-235 9-91 0-48Z" fill="url(#facet)" opacity=".78"/>
+      <path d="M0-299V-55" stroke="url(#edge)" stroke-width="1.15"/>
+      <!-- Three open tiers of angular crystal branches; no leaf-shaped plates. -->
+      <g fill="url(#ice)" stroke="#b2d6e1" stroke-width=".7" stroke-linejoin="round">
+        <path d="M-5-108 -13-132 -88-207 -76-177 -28-116Z"/>
+        <path d="M5-108 13-132 88-207 76-177 28-116Z"/>
+        <path d="M-4-196 -10-215 -51-269 -44-242 -18-204Z"/>
+        <path d="M4-196 10-215 51-269 44-242 18-204Z"/>
+        <path d="M-7-69 -18-90 -57-123 -48-102 -25-74Z"/>
+        <path d="M7-69 18-90 57-123 48-102 25-74Z"/>
+      </g>
+      <g fill="#78abc1" opacity=".5">
+        <path d="M-5-108 -88-207 -76-177 -28-116Z"/>
+        <path d="M5-108 88-207 76-177 28-116Z"/>
+        <path d="M-4-196 -51-269 -44-242 -18-204Z"/>
+        <path d="M4-196 51-269 44-242 18-204Z"/>
+      </g>
+      <g stroke="url(#edge)" stroke-width="1.2" stroke-linecap="round">
+        <path d="M-9-120 -83-201 M9-120 83-201 M-7-207 -48-263 M7-207 48-263 M-13-81 -54-119 M13-81 54-119"/>
+      </g>
+      <!-- Small detached points lend the crest a fantasy illustration rhythm. -->
+      <path d="M0-327 -3.3-319 0-311 3.3-319Z" fill="#a2c9d8"/>
+      <path d="M-104-224 -106-211 -96-211Z M104-224 106-211 96-211Z" fill="#bbdce5" opacity=".65"/>
+      </g>
+    </g>
+    <g id="inner-point">
+      <path d="M0-43 -12-23 0-8 12-23Z" fill="#d0e9ed" stroke="#f8fdf9" stroke-width="1"/>
+      <path d="M0-43V-8L12-23Z" fill="#8db9cc" opacity=".58"/>
+    </g>
+  </defs>
+  <!-- Broken arcs remain subordinate to the snow silhouette. -->
+  <g stroke="#8eb9c8" stroke-width="1" stroke-linecap="round" opacity=".42">
+    <path d="M135 305A282 282 0 0 1 304 135"/>
+    <path d="M490 665A282 282 0 0 0 665 490"/>
+  </g>
+  <g stroke="#fffdf5" stroke-width="1.3" opacity=".85">
+    <path d="M150 283A268 268 0 0 1 259 173"/>
+    <path d="M535 632A268 268 0 0 0 632 535"/>
+  </g>
+  <g transform="translate(400 400)">
+    <use href="#branch"/><use href="#branch" transform="rotate(60)"/><use href="#branch" transform="rotate(120)"/>
+    <use href="#branch" transform="rotate(180)"/><use href="#branch" transform="rotate(240)"/><use href="#branch" transform="rotate(300)"/>
+    <g transform="rotate(30)">
+      <use href="#inner-point"/><use href="#inner-point" transform="rotate(60)"/><use href="#inner-point" transform="rotate(120)"/>
+      <use href="#inner-point" transform="rotate(180)"/><use href="#inner-point" transform="rotate(240)"/><use href="#inner-point" transform="rotate(300)"/>
+    </g>
+  </g>
+  <path d="M400 368 427.7 384V416L400 432 372.3 416V384Z" fill="url(#pearl)" stroke="#f8fff9" stroke-width="1.8"/>
+  <path d="M400 369V430L427 416V384Z" fill="#90bfd0" opacity=".35"/>
+  <path d="M400 383 406 394 417 400 406 406 400 417 394 406 383 400 394 394Z" fill="#fffdf2"/>
+  <g fill="#9abecd">
+    <path d="M190 188 193 196 201 199 193 202 190 210 187 202 179 199 187 196Z"/>
+    <path d="M610 590 612 596 618 598 612 600 610 606 608 600 602 598 608 596Z"/>
+    <circle cx="657" cy="255" r="2"/><circle cx="148" cy="550" r="2"/>
+  </g>
+</svg>
