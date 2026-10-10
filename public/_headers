@@ -1,0 +1,4 @@
+# Astro-generated /_astro/ assets have fingerprinted filenames.
+# Cache them in browsers without repeated conditional revalidation.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

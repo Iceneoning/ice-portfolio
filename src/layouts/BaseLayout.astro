@@ -17,6 +17,20 @@ const { title, description, home = false, edition } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="/visuals/ice-mark.svg" />
+    <script is:inline>
+      document.documentElement.classList.add('js-images');
+      document.addEventListener('DOMContentLoaded', () => {
+        for (const image of document.querySelectorAll('img[data-progressive]')) {
+          const show = () => image.classList.add('image-ready');
+          if (image.decode) image.decode().then(show, show);
+          else if (image.complete) show();
+          else {
+            image.addEventListener('load', show, { once: true });
+            image.addEventListener('error', show, { once: true });
+          }
+        }
+      }, { once: true });
+    </script>
     <title>{title}</title>
   </head>
   <body>

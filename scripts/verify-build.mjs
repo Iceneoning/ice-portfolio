@@ -27,14 +27,27 @@ for (const [file, html] of htmlByPath) {
   const route = file.slice(dist.length).replaceAll('\\', '/').replace(/index\.html$/, '');
   check(`${route}: single H1`, (html.match(/<h1(?:\s|>)/g) || []).length === 1);
   const scriptCount = (html.match(/<script(?:\s|>)/g) || []).length;
-  check(`${route}: zero client scripts`, scriptCount === 0, String(scriptCount));
+  check(`${route}: expected client scripts`, route === '/' ? scriptCount === 2 : scriptCount === 1, String(scriptCount));
   check(`${route}: no decorative canvas`, !/<canvas/.test(html));
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
   check(`${route}: unique element and SVG gradient IDs`, new Set(ids).size === ids.length);
   for (const gradient of html.matchAll(/url\(#([^\)]+)\)/g)) {
     check(`${route}: SVG gradient target ${gradient[1]}`, ids.includes(gradient[1]));
   }
-  if (route === '/') check('Homepage: project-first navigation', html.includes('精选项目快捷入口') && html.includes('进入 RTS Gameplay Systems 案例') && html.includes('进入 Blitz Archive 案例'));
+  if (route === '/') {
+    check('Homepage: featured works navigation', html.includes('代表作品快捷入口') && html.includes('进入 RTS Gameplay Systems 案例') && html.includes('进入 Blitz Archive 案例'));
+    check('Homepage: horizontal showcase', html.includes('data-showcase-stage') && html.includes('data-showcase-viewport') && html.includes('data-showcase-track') && html.includes('data-showcase-prev') && html.includes('data-showcase-next'));
+    check('Homepage: two data-driven slides', (html.match(/<div\b[^>]*\bdata-showcase-slide\b/g) || []).length === 2);
+    check('Homepage: active-project CTA', html.includes('data-showcase-current') && html.includes('data-showcase-cta') && html.includes('data-showcase-progress'));
+    check('Homepage: viewport-scoped coverflow navigation', html.includes('data-position="active"') && html.includes('data-position="next"') && html.includes('wheel') && !html.includes('is-scroll-driven'));
+    check('Homepage: no redundant secondary hero CTA', !html.includes('阅读技术案例'));
+    check('Homepage: bidirectional carousel arrows enabled', !/<button[^>]*data-showcase-prev[^>]*disabled[^>]*>/.test(html) && !/<button[^>]*data-showcase-next[^>]*disabled[^>]*>/.test(html));
+    check('Homepage: no hero scene caption', !html.includes('scene-caption'));
+    check('Homepage: professional engineering copy', html.includes('聚焦 C++、Gameplay 系统设计与模块化架构'));
+    check('Homepage: progressive image placeholders', (html.match(/data-progressive="true"/g) || []).length === 3 && (html.match(/--art-preview:/g) || []).length >= 3);
+    check('Homepage: hero image prioritized', /class="atelier-image"/.test(html) && html.includes('fetchpriority="high"'));
+    check('Homepage: showcase images prefetched at low priority', (html.match(/fetchpriority="low"/g) || []).length === 2 && !html.includes('loading="lazy"'));
+  }
   check(`${route}: no prototype or old visual dependencies`, !/docs\/prototypes|hex-snow-crystal|portfolio_iceflake/.test(html));
   check(`${route}: light theme`, /name="color-scheme" content="light"/.test(html));
   const sources = [...html.matchAll(/\bsrcset="([^"]+)"/g)].flatMap((match) => match[1].split(',').map((source) => source.trim().split(/\s+/)[0]));
@@ -63,9 +76,14 @@ for (const [file, html] of htmlByPath) {
 
 const rts = htmlByPath.get(join(dist, 'projects', 'rts-gameplay-systems', 'index.html'));
 const blitz = htmlByPath.get(join(dist, 'projects', 'blitz-archive', 'index.html'));
-for (const [name, html, next] of [['RTS', rts, 'blitz-archive'], ['Blitz', blitz, 'rts-gameplay-systems']]) {
-  check(`${name}: two named next-work entries`, (html.match(/aria-label="下一部作品：/g) || []).length === 2);
-  check(`${name}: next-work target`, (html.match(new RegExp(`href="/projects/${next}/"`, 'g')) || []).length === 2);
+for (const [name, html, direction, adjacent] of [
+  ['RTS', rts, '下一部作品', 'blitz-archive'],
+  ['Blitz', blitz, '上一部作品', 'rts-gameplay-systems'],
+]) {
+  check(`${name}: single project-index return`, (html.match(/返回作品选集/g) || []).length === 1);
+  check(`${name}: adjacent navigation`, html.includes(`aria-label="${direction}：`) && html.includes(`href="/projects/${adjacent}/"`));
+  check(`${name}: no redundant next-work entry`, (html.match(/aria-label="下一部作品：/g) || []).length + (html.match(/aria-label="上一部作品：/g) || []).length === 1);
+  check(`${name}: navigation anchor`, html.includes('id="project-navigation"'));
 }
 check('RTS: accurate ownership and testing limits', rts.includes('命令系统不是本人开发') && rts.includes('尚未完成实际多人网络测试'));
 check('Blitz: existing framework separated', blitz.includes('Lyra 与 GAS 是复用的既有框架'));
@@ -74,6 +92,11 @@ const styles = (await walk(join(dist, '_astro'))).filter((file) => file.endsWith
 let css = '';
 for (const file of styles) css += await readFile(file, 'utf8');
 check('CSS: reduced-motion fallback present (static inspection)', css.includes('prefers-reduced-motion') && /animation:none!important/.test(css) && /transition:none!important/.test(css));
+check('CSS: showcase and adjacent navigation styles', css.includes('showcase-slide') && css.includes('showcase-cta') && css.includes('case-index-button'));
+check('CSS: bounded non-sticky cinematic showcase', !css.includes('gallery.is-scroll-driven') && css.includes('perspective:') && css.includes('rotateY(') && css.includes('78vw'));
+check('CSS: progressive placeholder fade-in', /artwork-frame:{1,2}before/.test(css) && /hero-scene:{1,2}before/.test(css) && css.includes('.image-ready'));
+const headers = await readFile(join(dist, '_headers'), 'utf8');
+check('Cloudflare: immutable fingerprinted asset caching', headers.includes('/_astro/*') && headers.includes('max-age=31536000, immutable') && !headers.split(/\r?\n/).some((line) => line.trim() === '/*'));
 check('CSS: no old shader/prototype dependency', !/optics-stage|docs\/prototypes|\.\/snow-emblem\.svg/.test(css));
 check('SVG: published small winter identity', (await readFile(join(dist, 'visuals', 'ice-mark.svg'), 'utf8')).includes('viewBox="0 0 40 40"'));
 if (preview) {

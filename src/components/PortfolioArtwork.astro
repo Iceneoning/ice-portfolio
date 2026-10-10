@@ -1,8 +1,12 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import settlement from '../assets/atelier/winter-settlement.png';
 import archive from '../assets/atelier/winter-archive.png';
 interface Props { warm?: boolean; wide?: boolean; }
 const { warm = false, wide = false } = Astro.props;
+const artwork = warm ? archive : settlement;
+const artPreview = await getImage({ src: artwork, width: 48, format: 'webp', quality: 28 });
 ---
-<Image src={warm ? archive : settlement} alt="" aria-hidden="true" class="portfolio-artwork" widths={[480, 800, 1200]} sizes={wide ? '(max-width: 820px) calc(100vw - 40px), 90vw' : '(max-width: 700px) calc(100vw - 40px), 50vw'} format="webp" quality={82} loading="lazy" />
+<span class="artwork-frame" style={`--art-preview: url("${artPreview.src}")`}>
+  <Image src={artwork} alt="" aria-hidden="true" class="portfolio-artwork" data-progressive widths={[480, 800, 1200]} sizes={wide ? '(max-width: 820px) calc(100vw - 40px), 90vw' : '(max-width: 700px) 88vw, min(72vw, 940px)'} format="webp" quality={76} loading="eager" fetchpriority={wide ? 'high' : 'low'} />
+</span>

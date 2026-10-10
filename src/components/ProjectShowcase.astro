@@ -1,0 +1,194 @@
+---
+import ProjectPoster from './ProjectPoster.astro';
+import { projectHref, type Project } from '../lib/projects';
+
+interface Props { projects: Project[]; }
+const { projects } = Astro.props;
+const firstProject = projects[0];
+---
+<section class="gallery" id="screenings" aria-labelledby="screenings-title" data-showcase>
+  <div class="showcase-stage" data-showcase-stage>
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="screenings-title">作品选集<span class="accent">。</span></h2>
+        {projects.length > 0 && <div class="showcase-toolbar">
+          <span class="showcase-count" aria-live="polite" aria-atomic="true"><span data-showcase-current>01</span><span class="showcase-count-divider"> / </span>{String(projects.length).padStart(2, '0')}</span>
+          <div class="showcase-controls" aria-label="作品切换">
+            <button class="showcase-arrow" type="button" aria-label="上一部作品" aria-controls="showcase-track" data-showcase-prev disabled={projects.length <= 1}>←</button>
+            <button class="showcase-arrow" type="button" aria-label="下一部作品" aria-controls="showcase-track" data-showcase-next disabled={projects.length <= 1}>→</button>
+          </div>
+        </div>}
+      </div>
+      {firstProject ? <>
+        <div class="showcase-viewport" data-showcase-viewport>
+          <div id="showcase-track" class="showcase-track" data-showcase-track role="region" aria-label="可循环浏览的代表作品" tabindex="0">
+            {projects.map((project, index) => <div
+              class="showcase-slide"
+              data-showcase-slide
+              data-position={index === 0 ? 'active' : index === 1 ? 'next' : index === projects.length - 1 ? 'prev' : 'hidden'}
+              data-title={project.data.title}
+              data-href={projectHref(project)}
+              aria-label={`第 ${index + 1} 部：${project.data.title}`}>
+              <ProjectPoster project={project} />
+            </div>)}
+          </div>
+        </div>
+        <div class="showcase-footer">
+          <span class="showcase-rule" data-showcase-progress aria-hidden="true"></span>
+          <a class="showcase-cta" href={projectHref(firstProject)} data-showcase-cta aria-label={`查看 ${firstProject.data.title} 项目案例`}>查看当前项目 <span aria-hidden="true">↗</span></a>
+        </div>
+      </> : <p class="showcase-empty">暂无公开项目。</p>}
+    </div>
+  </div>
+</section>
+
+<script>
+  const gallery = document.querySelector<HTMLElement>('[data-showcase]');
+  const track = gallery?.querySelector<HTMLElement>('[data-showcase-track]');
+  const viewport = gallery?.querySelector<HTMLElement>('[data-showcase-viewport]');
+
+  if (gallery && track && viewport) {
+    const slides = Array.from(track.querySelectorAll<HTMLElement>('[data-showcase-slide]'));
+    const count = slides.length;
+    const previous = gallery.querySelector<HTMLButtonElement>('[data-showcase-prev]');
+    const next = gallery.querySelector<HTMLButtonElement>('[data-showcase-next]');
+    const current = gallery.querySelector<HTMLElement>('[data-showcase-current]');
+    const cta = gallery.querySelector<HTMLAnchorElement>('[data-showcase-cta]');
+    const progressLine = gallery.querySelector<HTMLElement>('[data-showcase-progress]');
+    const wrap = (index: number) => (index % count + count) % count;
+
+    // With two projects, previous and next point to the same project.
+    // Two visual-only clones create both wings without duplicating accessible work entries.
+    const shadows: HTMLElement[] = [];
+    if (count === 2) {
+      slides.forEach((slide, index) => {
+        const shadow = slide.cloneNode(true) as HTMLElement;
+        shadow.removeAttribute('data-showcase-slide');
+        shadow.dataset.showcaseShadow = String(index);
+        shadow.dataset.position = 'hidden';
+        shadow.setAttribute('aria-hidden', 'true');
+        shadow.querySelector('a')?.setAttribute('tabindex', '-1');
+        track.appendChild(shadow);
+        shadows.push(shadow);
+      });
+    }
+
+    let activeIndex = 0;
+    let wheelAccumulated = 0;
+    let lastWheelAt = 0;
+    let wheelCooldownUntil = 0;
+    let pointerStartX = 0;
+    let dragging = false;
+    let moved = false;
+
+    const render = (index: number) => {
+      if (!count) return;
+      activeIndex = wrap(index);
+      const prevIndex = wrap(activeIndex - 1);
+      const nextIndex = wrap(activeIndex + 1);
+      slides.forEach((slide, i) => {
+        let position: string = 'hidden';
+        if (i === activeIndex) position = 'active';
+        else if (i === nextIndex) position = 'next';
+        else if (i === prevIndex) position = 'prev';
+        slide.dataset.position = position;
+        slide.setAttribute('aria-hidden', String(position !== 'active'));
+        const link = slide.querySelector<HTMLAnchorElement>('a.project');
+        if (link) link.tabIndex = position === 'active' ? 0 : -1;
+      });
+      shadows.forEach((shadow, i) => {
+        shadow.dataset.position = i === prevIndex ? 'prev' : 'hidden';
+      });
+      // Decorative shadows and previews never contribute extra keyboard stops.
+      if (current) current.textContent = String(activeIndex + 1).padStart(2, '0');
+      if (previous) previous.disabled = count <= 1;
+      if (next) next.disabled = count <= 1;
+      progressLine?.style.setProperty('--showcase-progress', Math.round((activeIndex + 1) / count * 100) + '%');
+      if (cta) {
+        cta.href = slides[activeIndex]?.dataset.href ?? '#screenings';
+        cta.setAttribute('aria-label', '查看 ' + (slides[activeIndex]?.dataset.title ?? '当前') + ' 项目案例');
+      }
+    };
+
+    const shift = (direction: number) => {
+      if (count <= 1) return;
+      render(activeIndex + direction);
+    };
+
+    // Only the artwork viewport owns the wheel gesture. The surrounding page,
+    // including the side gutters, always retains its native vertical scrolling.
+    // After one project switch, following wheel events pass through so the
+    // visitor can leave the gallery without an infinite carousel scroll trap.
+    viewport.addEventListener('wheel', (event) => {
+      if (count <= 1 || event.ctrlKey || event.metaKey) return;
+      const amount = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+      if (amount === 0) return;
+      const now = performance.now();
+      if (now < wheelCooldownUntil) return;
+      if (now - lastWheelAt > 220 || Math.sign(amount) !== Math.sign(wheelAccumulated)) {
+        wheelAccumulated = 0;
+      }
+      lastWheelAt = now;
+      wheelAccumulated += amount * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? viewport.clientHeight : 1);
+      event.preventDefault();
+      if (Math.abs(wheelAccumulated) < 45) return;
+      shift(wheelAccumulated > 0 ? 1 : -1);
+      wheelAccumulated = 0;
+      wheelCooldownUntil = now + 560;
+    }, { passive: false });
+
+    previous?.addEventListener('click', () => shift(-1));
+    next?.addEventListener('click', () => shift(1));
+
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        shift(event.key === 'ArrowRight' ? 1 : -1);
+      }
+    });
+
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      dragging = true;
+      moved = false;
+      pointerStartX = event.clientX;
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      if (Math.abs(event.clientX - pointerStartX) > 7) {
+        moved = true;
+        track.classList.add('is-dragging');
+      }
+    });
+    window.addEventListener('pointerup', (event) => {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('is-dragging');
+      const delta = event.clientX - pointerStartX;
+      if (Math.abs(delta) >= 55) shift(delta < 0 ? 1 : -1);
+      if (moved) window.setTimeout(() => { moved = false; }, 0);
+    });
+    window.addEventListener('pointercancel', () => {
+      dragging = false;
+      track.classList.remove('is-dragging');
+    });
+    viewport.addEventListener('dragstart', (event) => event.preventDefault());
+    track.addEventListener('click', (event) => {
+      const slide = (event.target as HTMLElement).closest<HTMLElement>('.showcase-slide');
+      if (!slide) return;
+      if (moved) {
+        event.preventDefault();
+        event.stopPropagation();
+        moved = false;
+        return;
+      }
+      if (slide.dataset.position === 'prev' || slide.dataset.position === 'next') {
+        event.preventDefault();
+        event.stopPropagation();
+        shift(slide.dataset.position === 'prev' ? -1 : 1);
+      }
+    }, true);
+
+    render(0);
+  }
+</script>
